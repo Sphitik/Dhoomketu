@@ -25,9 +25,9 @@ class Menu:
 
     def handle_input(self, event):
         if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_UP:
+            if event.key == pygame.K_w:
                 self.selected_option = (self.selected_option - 1) % len(self.options)
-            elif event.key == pygame.K_DOWN:
+            elif event.key == pygame.K_s:
                 self.selected_option = (self.selected_option + 1) % len(self.options)
             elif event.key == pygame.K_RETURN:
                 return self.options[self.selected_option]
