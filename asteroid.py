@@ -18,6 +18,7 @@ class Asteroid(CircleShape):
         self.kill()
 
         if self.radius <= ASTEROID_MIN_RADIUS:
+            self.explosion_sound.play()
             return
 
         random_angle = random.uniform(20,50)

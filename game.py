@@ -10,10 +10,14 @@ from menu import Menu
 class Game:
     def __init__(self):
         pygame.init()
+        pygame.mixer.init()
         self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
         self.clock = pygame.time.Clock()
         self.dt = 0
         self.game_state = "start_menu"
+
+        self.shoot_sound = pygame.mixer.Sound("sounds/064-laser-thum.mp3")
+        Asteroid.explosion_sound = pygame.mixer.Sound("sounds/anime-ahh.mp3")
 
         self.start_menu = Menu(self.screen, "Dhoomketu", ["Start", "Quit"])
         self.pause_menu = Menu(self.screen, "Paused", ["Resume", "New Game", "Quit"])
@@ -31,7 +35,7 @@ class Game:
 
         Player.containers = (self.updatable, self.drawable)
 
-        self.player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+        self.player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, self.shoot_sound)
 
     def run(self):
         while True:
