@@ -16,8 +16,8 @@ class Game:
         self.dt = 0
         self.game_state = "start_menu"
 
-        self.shoot_sound = pygame.mixer.Sound("sounds/064-laser-thum.mp3")
-        Asteroid.explosion_sound = pygame.mixer.Sound("sounds/anime-ahh.mp3")
+        self.shoot_sound = pygame.mixer.Sound("assets/sounds/064-laser-thum.mp3")
+        Asteroid.explosion_sound = pygame.mixer.Sound("assets/sounds/anime-ahh.mp3")
 
         self.start_menu = Menu(self.screen, "Dhoomketu", ["Start", "Quit"])
         self.pause_menu = Menu(self.screen, "Paused", ["Resume", "New Game", "Quit"])

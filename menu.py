@@ -5,8 +5,8 @@ class Menu:
         self.screen = screen
         self.title = title
         self.options = options
-        self.font = pygame.font.Font(None, 74)
-        self.option_font = pygame.font.Font(None, 50)
+        self.font = pygame.font.Font("assets/fonts/04B_30.ttf", 74)
+        self.option_font = pygame.font.Font("assets/fonts/VerminVibes1989.ttf", 50)
         self.selected_option = 0
 
     def draw(self):
